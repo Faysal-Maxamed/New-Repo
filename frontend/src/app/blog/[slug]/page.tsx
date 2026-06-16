@@ -20,7 +20,7 @@ export async function generateMetadata({ params }: BlogDetailPageProps) {
   if (!blog) return { title: "Blog Not Found" };
 
   return {
-    title: `${blog.title} | Lumina Agency Blog`,
+    title: `${blog.title} | Guhaad Creatives Blog`,
     description: blog.excerpt,
   };
 }

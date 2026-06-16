@@ -110,6 +110,100 @@ body {
   animation: shimmer 3s ease-in-out infinite;
 }
 
+@keyframes aurora {
+  0%, 100% { transform: translateX(0) translateY(0) rotate(0deg); }
+  25% { transform: translateX(5%) translateY(-5%) rotate(90deg); }
+  50% { transform: translateX(0) translateY(-10%) rotate(180deg); }
+  75% { transform: translateX(-5%) translateY(-5%) rotate(270deg); }
+}
+
+@keyframes gradient-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+@keyframes morph {
+  0%, 100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+  50% { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
+}
+
+@keyframes orbit {
+  0% { transform: rotate(0deg) translateX(100px) rotate(0deg); }
+  100% { transform: rotate(360deg) translateX(100px) rotate(-360deg); }
+}
+
+.animate-aurora {
+  animation: aurora 20s ease-in-out infinite;
+}
+
+.animate-gradient-shift {
+  background-size: 200% 200%;
+  animation: gradient-shift 8s ease infinite;
+}
+
+.animate-morph {
+  animation: morph 8s ease-in-out infinite;
+}
+
+.animate-orbit {
+  animation: orbit 20s linear infinite;
+}
+
+.hero-gradient-border {
+  position: relative;
+  border-radius: 2rem;
+  background: color-mix(in srgb, var(--card) 85%, transparent);
+  backdrop-filter: blur(20px);
+}
+
+.hero-gradient-border::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(
+    135deg,
+    var(--gradient-start),
+    var(--gradient-end),
+    rgba(168, 85, 247, 0.5),
+    var(--gradient-start)
+  );
+  background-size: 300% 300%;
+  animation: gradient-shift 6s ease infinite;
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+.hero-shine {
+  background: linear-gradient(
+    105deg,
+    transparent 40%,
+    rgba(255, 255, 255, 0.15) 45%,
+    rgba(255, 255, 255, 0.05) 50%,
+    transparent 55%
+  );
+  background-size: 250% 100%;
+  animation: shimmer 4s ease-in-out infinite;
+}
+
+@keyframes hero-float {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  33% { transform: translateY(-8px) rotate(1deg); }
+  66% { transform: translateY(4px) rotate(-1deg); }
+}
+
+.hero-float {
+  animation: hero-float 7s ease-in-out infinite;
+}
+
 ::selection {
   background: color-mix(in srgb, var(--accent) 30%, transparent);
   color: var(--foreground);

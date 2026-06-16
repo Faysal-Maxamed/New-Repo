@@ -12,159 +12,260 @@ export interface Project {
   gallery: string[];
 }
 
+export const companyInfo = {
+  name: "Guhaad Creatives & Advert",
+  shortName: "Guhaad",
+  tagline: "Creative Agency",
+  overview:
+    "Guhaad Creatives & Advert is a full-service creative agency dedicated to helping businesses build strong brands, reach wider audiences, and achieve measurable growth through innovative marketing and advertising solutions.",
+  whoWeAre:
+    "We are a team of creative thinkers, designers, marketers, videographers, and digital strategists committed to delivering impactful campaigns and professional brand experiences.",
+  vision:
+    "To become a leading creative and advertising agency recognized for innovation, quality, and results across Somalia and the East African region.",
+  mission:
+    "To empower businesses through creative storytelling, strategic marketing, and modern digital solutions that drive growth and visibility.",
+  futureGoals:
+    "To expand our creative services, strengthen our digital capabilities, and become a trusted regional creative partner.",
+  phone: "0618240346",
+  email: "guhaadcreatives@gmail.com",
+  website: "guhaadadvert.com",
+  address: "Mogadishu, Somalia",
+  social: {
+    facebook: "https://facebook.com/guhaadcreatives",
+    instagram: "https://instagram.com/guhaadadvert",
+    linkedin: "https://linkedin.com/company/guhaadadvert",
+  },
+};
+
+export const coreValues = [
+  { title: "Creativity", description: "We push boundaries to deliver fresh, original ideas that stand out." },
+  { title: "Excellence", description: "We hold ourselves to the highest standards in every project we deliver." },
+  { title: "Integrity", description: "Honest communication and transparent partnerships guide everything we do." },
+  { title: "Innovation", description: "We embrace modern tools and strategies to stay ahead of the curve." },
+  { title: "Client Success", description: "Your growth is our priority — we measure success by your results." },
+  { title: "Professionalism", description: "Reliable, respectful, and dedicated service from start to finish." },
+];
+
+export const whyChooseUs = [
+  "Experienced Creative Team",
+  "High-Quality Production",
+  "Modern Marketing Strategies",
+  "Timely Delivery",
+  "Customer-Focused Approach",
+  "Affordable Business Solutions",
+];
+
+export const processSteps = [
+  { step: "01", title: "Discovery & Consultation", description: "We learn about your business, goals, and audience through in-depth consultation." },
+  { step: "02", title: "Research & Strategy", description: "We analyze your market and craft a tailored creative strategy." },
+  { step: "03", title: "Concept Development", description: "Our team develops creative concepts aligned with your brand vision." },
+  { step: "04", title: "Design & Production", description: "We bring concepts to life with professional design and production." },
+  { step: "05", title: "Review & Feedback", description: "You review the work and we refine until it exceeds expectations." },
+  { step: "06", title: "Launch & Delivery", description: "We launch your campaign and deliver all final assets." },
+  { step: "07", title: "Continuous Support", description: "Ongoing support to ensure lasting success and growth." },
+];
+
+export const industries = [
+  "Healthcare",
+  "Education",
+  "Real Estate",
+  "Retail",
+  "NGOs",
+  "Government Institutions",
+  "Technology Companies",
+  "Hospitality",
+  "Small Businesses",
+];
+
 export const stats = [
-  { value: "250+", label: "Projects Completed" },
-  { value: "120+", label: "Happy Clients" },
-  { value: "15+", label: "Years Experience" },
-  { value: "40+", label: "Awards Won" },
+  { value: "100+", label: "Projects Completed" },
+  { value: "50+", label: "Happy Clients" },
+  { value: "10+", label: "Services Offered" },
+  { value: "5+", label: "Years Experience" },
 ];
 
 export const services = [
   {
     icon: "Palette",
-    title: "Brand Identity",
+    title: "Branding & Identity Design",
+    description: "Memorable brand identities including logos, brand guidelines, and visual communication systems.",
+  },
+  {
+    icon: "PenTool",
+    title: "Graphic Design",
+    description: "Professional marketing materials, posters, flyers, and visual content for all platforms.",
+  },
+  {
+    icon: "Share2",
+    title: "Social Media Management",
+    description: "Strategic social media presence that engages audiences and builds community.",
+  },
+  {
+    icon: "Video",
+    title: "Video Production",
+    description: "Promotional videos, commercials, corporate videos, interviews, and documentaries.",
+  },
+  {
+    icon: "Film",
+    title: "Motion Graphics & Animation",
+    description: "Dynamic animated content that captures attention and tells your story.",
+  },
+  {
+    icon: "Camera",
+    title: "Photography",
+    description: "Professional photography for products, events, portraits, and commercial use.",
+  },
+  {
+    icon: "Megaphone",
+    title: "Digital Marketing",
+    description: "Social media, paid advertising, content marketing, and strategic campaigns.",
+  },
+  {
+    icon: "Monitor",
+    title: "Website Design & Development",
+    description: "Modern, responsive, and user-friendly websites tailored to business goals.",
+  },
+  {
+    icon: "FileText",
+    title: "Content Creation",
+    description: "Compelling copy, visuals, and multimedia content that engages your audience.",
+  },
+  {
+    icon: "Target",
+    title: "Advertising Campaign Management",
+    description: "End-to-end campaign planning, execution, and performance tracking.",
+  },
+];
+
+export const featuredServices = [
+  {
+    icon: "Palette",
+    title: "Branding Solutions",
     description:
-      "Crafting unique visual identities that make your brand unforgettable.",
+      "We create memorable brand identities including logos, brand guidelines, marketing materials, and visual communication systems.",
   },
   {
     icon: "Megaphone",
     title: "Digital Marketing",
     description:
-      "Data-driven campaigns that reach the right audience at the right time.",
+      "Our marketing solutions help businesses reach their target audiences through social media, paid advertising, content marketing, and strategic campaigns.",
+  },
+  {
+    icon: "Video",
+    title: "Video Production",
+    description:
+      "We produce promotional videos, commercials, corporate videos, interviews, documentaries, and social media content.",
   },
   {
     icon: "Monitor",
-    title: "Web Design",
+    title: "Website Solutions",
     description:
-      "Stunning, conversion-focused websites that tell your brand story.",
-  },
-  {
-    icon: "Camera",
-    title: "Content Creation",
-    description:
-      "Compelling visuals and copy that engage and inspire your audience.",
+      "We design and develop modern, responsive, and user-friendly websites tailored to business goals.",
   },
 ];
 
 export const projects: Project[] = [
   {
     id: 1,
-    slug: "nova-fashion-rebrand",
-    title: "Nova Fashion Rebrand",
+    slug: "brand-identity-campaign",
+    title: "Corporate Brand Identity",
     category: "Branding",
-    image:
-      "https://images.unsplash.com/photo-1445205170230-053b83016050?w=1200&h=800&fit=crop",
-    description: "Complete brand overhaul for a luxury fashion label.",
+    image: "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=1200&h=800&fit=crop",
+    description: "Complete brand identity design for a leading Somali business.",
     longDescription:
-      "Nova Fashion approached us to reinvent their entire brand identity for the digital age. We conducted extensive market research, developed a sophisticated visual language, and created a cohesive brand system spanning logo, typography, color palette, packaging, and digital touchpoints. The rebrand resulted in a 45% increase in brand recognition and positioned Nova as a leader in luxury fashion.",
-    client: "Nova Fashion Group",
+      "We developed a comprehensive brand identity including logo design, color palette, typography, brand guidelines, and marketing collateral. The new identity positioned the client as a modern, trustworthy leader in their industry.",
+    client: "Confidential Client",
     year: "2025",
-    services: ["Brand Strategy", "Logo Design", "Packaging", "Digital Assets"],
+    services: ["Brand Identity", "Logo Design", "Brand Guidelines"],
     gallery: [
       "https://images.unsplash.com/photo-1558171813-4c088753af8f?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1483985988354-763728e1935b?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1626785774573-4b799314346d?w=800&h=600&fit=crop",
     ],
   },
   {
     id: 2,
-    slug: "techflow-campaign",
-    title: "TechFlow Campaign",
+    slug: "social-media-campaign",
+    title: "Social Media Campaign",
     category: "Digital Marketing",
-    image:
-      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&h=800&fit=crop",
-    description: "Multi-channel digital campaign with 300% ROI increase.",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&h=800&fit=crop",
+    description: "Multi-platform social media campaign with measurable growth results.",
     longDescription:
-      "TechFlow needed a comprehensive digital marketing campaign to launch their SaaS platform. We designed and executed a multi-channel strategy across social media, search, email, and content marketing. Our data-driven approach optimized ad spend in real-time, delivering exceptional results that exceeded all KPIs within the first quarter.",
-    client: "TechFlow Inc.",
+      "We designed and executed a comprehensive social media strategy across Facebook, Instagram, and LinkedIn. The campaign increased engagement by 200% and significantly expanded the client's online reach.",
+    client: "Confidential Client",
     year: "2025",
-    services: ["Social Media", "PPC Ads", "Content Strategy", "Analytics"],
+    services: ["Social Media", "Content Creation", "Analytics"],
     gallery: [
       "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1553877522-43269d4ea984?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=800&h=600&fit=crop",
     ],
   },
   {
     id: 3,
-    slug: "greenleaf-identity",
-    title: "GreenLeaf Identity",
-    category: "Brand Identity",
-    image:
-      "https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&h=800&fit=crop",
-    description: "Sustainable brand identity for an eco-friendly startup.",
+    slug: "promotional-video",
+    title: "Promotional Video Production",
+    category: "Video Production",
+    image: "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=1200&h=800&fit=crop",
+    description: "High-quality promotional video for product launch campaign.",
     longDescription:
-      "GreenLeaf is an eco-friendly startup committed to sustainable living. We crafted a warm, organic brand identity that communicates their environmental values while appealing to modern consumers. The identity system includes logo, stationery, product packaging, and a complete social media kit.",
-    client: "GreenLeaf Co.",
+      "From concept to final edit, we produced a compelling promotional video that showcased the client's products and services. The video was used across social media, website, and advertising channels.",
+    client: "Confidential Client",
     year: "2024",
-    services: ["Brand Identity", "Packaging Design", "Social Media Kit"],
+    services: ["Video Production", "Motion Graphics", "Editing"],
     gallery: [
-      "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1532996122724-e3c354a0b782?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1473341303090-613dca712df9?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1574714566990-12f42a7f077d?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1536240478700-b869070f9279?w=800&h=600&fit=crop",
     ],
   },
   {
     id: 4,
-    slug: "pulse-fitness-app",
-    title: "Pulse Fitness App",
-    category: "UI/UX Design",
-    image:
-      "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=1200&h=800&fit=crop",
-    description: "Mobile app design with 50K+ downloads in first month.",
+    slug: "business-website",
+    title: "Business Website Design",
+    category: "Web Design",
+    image: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=1200&h=800&fit=crop",
+    description: "Modern responsive website with seamless user experience.",
     longDescription:
-      "Pulse Fitness needed a mobile app that would stand out in a crowded fitness market. We designed an intuitive, motivating user experience with personalized workout plans, progress tracking, and social features. The app achieved 50,000+ downloads in its first month and maintained a 4.8-star rating.",
-    client: "Pulse Fitness Ltd.",
+      "We designed and developed a fully responsive business website featuring modern UI/UX, fast loading speeds, and mobile-first design. The site increased online inquiries and strengthened the client's digital presence.",
+    client: "Confidential Client",
     year: "2024",
-    services: ["UI/UX Design", "App Prototyping", "User Research"],
+    services: ["Web Design", "Development", "SEO"],
     gallery: [
-      "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1434682881908-b43d0467b798?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1518611012118-696072aa579a?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1540497077202-7c8a3999166f?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1547658719-da2b51169166?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=800&h=600&fit=crop",
     ],
   },
   {
     id: 5,
-    slug: "artisan-coffee-co",
-    title: "Artisan Coffee Co.",
-    category: "Packaging",
-    image:
-      "https://images.unsplash.com/photo-1495474473362-a45f79e40433?w=1200&h=800&fit=crop",
-    description: "Premium packaging design for artisan coffee brand.",
+    slug: "event-photography",
+    title: "Corporate Event Photography",
+    category: "Photography",
+    image: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=1200&h=800&fit=crop",
+    description: "Professional event coverage and corporate photography.",
     longDescription:
-      "Artisan Coffee Co. wanted packaging that reflected the premium quality of their single-origin beans. We designed elegant, sustainable packaging with hand-illustrated labels, a cohesive product line system, and in-store display materials that elevated the brand's shelf presence.",
-    client: "Artisan Coffee Co.",
+      "We provided comprehensive photography coverage for a major corporate event, delivering high-quality images for marketing, social media, and press releases.",
+    client: "Confidential Client",
     year: "2024",
-    services: ["Packaging Design", "Label Design", "Retail Display"],
+    services: ["Photography", "Event Coverage", "Photo Editing"],
     gallery: [
-      "https://images.unsplash.com/photo-1447933601403-0c6688de566e?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1514432324607-09f90a966a4a?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1498804103079-a6881b0501a7?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1505373877841-8d25f39de3a4?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1511578314322-379afb476865?w=800&h=600&fit=crop",
     ],
   },
   {
     id: 6,
-    slug: "skyline-real-estate",
-    title: "Skyline Real Estate",
-    category: "Web Design",
-    image:
-      "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1200&h=800&fit=crop",
-    description: "Luxury real estate website with virtual tour integration.",
+    slug: "advertising-campaign",
+    title: "Advertising Campaign",
+    category: "Advertising",
+    image: "https://images.unsplash.com/photo-1533750516457-a7f992c1df96?w=1200&h=800&fit=crop",
+    description: "Full-service advertising campaign across multiple channels.",
     longDescription:
-      "Skyline Real Estate required a premium web presence to showcase luxury properties. We built a stunning, high-performance website featuring immersive virtual tours, advanced property search, and a lead generation system that increased inquiries by 200% within three months of launch.",
-    client: "Skyline Properties",
+      "We managed an end-to-end advertising campaign including creative development, media planning, and performance tracking. The campaign delivered strong ROI and increased brand awareness.",
+    client: "Confidential Client",
     year: "2025",
-    services: ["Web Design", "Virtual Tours", "SEO", "Lead Generation"],
+    services: ["Campaign Management", "Creative Design", "Media Planning"],
     gallery: [
-      "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=600&fit=crop",
     ],
   },
 ];
@@ -174,37 +275,50 @@ export function getProjectBySlug(slug: string): Project | undefined {
 }
 
 export const team = [
+  { name: "Creative Director", role: "Leadership & Vision", image: "from-violet-500 to-purple-600" },
+  { name: "Design Team", role: "Graphic & Brand Design", image: "from-blue-500 to-indigo-600" },
+  { name: "Marketing Team", role: "Digital Strategy", image: "from-emerald-500 to-teal-600" },
+  { name: "Production Team", role: "Video & Photography", image: "from-orange-500 to-rose-600" },
+];
+
+export const testimonials = [
   {
-    name: "Sarah Mitchell",
-    role: "Creative Director",
-    image: "from-pink-500 to-rose-600",
+    quote: "Guhaad Creatives transformed our brand completely. Their creative vision and professionalism exceeded every expectation.",
+    author: "Business Client",
+    role: "CEO, Mogadishu",
   },
   {
-    name: "James Chen",
-    role: "Lead Strategist",
-    image: "from-blue-500 to-indigo-600",
+    quote: "The quality of their video production and digital marketing is outstanding. Best creative agency in Somalia.",
+    author: "Marketing Director",
+    role: "Retail Company",
   },
   {
-    name: "Aisha Hassan",
-    role: "Art Director",
-    image: "from-violet-500 to-purple-600",
+    quote: "Professional, creative, and always on time. They truly understand modern advertising and deliver results.",
+    author: "NGO Representative",
+    role: "Program Manager",
   },
-  {
-    name: "Marcus Rivera",
-    role: "Digital Lead",
-    image: "from-emerald-500 to-teal-600",
-  },
+];
+
+export const trustedBrands = [
+  "Healthcare",
+  "Education",
+  "Real Estate",
+  "Retail",
+  "NGOs",
+  "Government",
+  "Technology",
+  "Hospitality",
 ];
 
 export const oneTimeServices = [
   {
     title: "Logo Design",
-    price: "$499",
+    price: "$99",
     duration: "One-time",
     features: [
       "3 unique logo concepts",
       "Unlimited revisions",
-      "All file formats (AI, PNG, SVG)",
+      "All file formats (PNG, SVG, PDF)",
       "Brand color palette",
       "Social media kit",
     ],
@@ -212,21 +326,21 @@ export const oneTimeServices = [
   },
   {
     title: "Brand Package",
-    price: "$1,299",
+    price: "$299",
     duration: "One-time",
     features: [
       "Complete brand identity",
       "Logo + typography + colors",
       "Business card design",
-      "Letterhead & envelope",
       "Brand guidelines document",
+      "Marketing materials",
       "30-day support",
     ],
     popular: true,
   },
   {
     title: "Website Launch",
-    price: "$2,499",
+    price: "$499",
     duration: "One-time",
     features: [
       "Custom 5-page website",
@@ -248,7 +362,7 @@ export const freeServices = [
     features: [
       "Basic brand consultation",
       "1 social media template",
-      "Monthly newsletter tips",
+      "Monthly marketing tips",
       "Community access",
     ],
     popular: false,
@@ -272,41 +386,11 @@ export const freeServices = [
     duration: "Limited time",
     features: [
       "Free logo sketch",
-      "Color palette generator",
-      "Font pairing suggestions",
+      "Color palette suggestions",
+      "Font pairing guide",
       "Design resource library",
       "Priority community support",
     ],
     popular: false,
   },
-];
-
-export const testimonials = [
-  {
-    quote:
-      "Lumina Agency transformed our brand completely. Their creative vision exceeded every expectation.",
-    author: "Emily Watson",
-    role: "CEO, Nova Fashion",
-  },
-  {
-    quote:
-      "The ROI from their digital campaign was incredible. Best agency we've ever worked with.",
-    author: "David Park",
-    role: "CMO, TechFlow",
-  },
-  {
-    quote:
-      "Professional, creative, and always on time. They truly understand modern advertising.",
-    author: "Lisa Thompson",
-    role: "Founder, GreenLeaf",
-  },
-];
-
-export const trustedBrands = [
-  "Nova Fashion",
-  "TechFlow",
-  "GreenLeaf",
-  "Pulse Fitness",
-  "Artisan Coffee",
-  "Skyline",
 ];

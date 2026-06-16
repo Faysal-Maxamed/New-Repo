@@ -3,11 +3,30 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Check, Sparkles, Zap } from "lucide-react";
+import {
+  Palette,
+  Megaphone,
+  Monitor,
+  Camera,
+  PenTool,
+  Share2,
+  Video,
+  Film,
+  FileText,
+  Target,
+} from "lucide-react";
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { AnimatedBackground } from "@/components/ui/AnimatedBackground";
 import { Button } from "@/components/ui/Button";
 import { CTASection } from "@/components/sections/CTASection";
-import { oneTimeServices, freeServices } from "@/data/content";
+import { ProcessSection } from "@/components/sections/ProcessSection";
+import {
+  services,
+  featuredServices,
+  oneTimeServices,
+  freeServices,
+} from "@/data/content";
 import { getWhatsAppLink } from "@/lib/constants";
 
 type Tab = "onetime" | "free";
@@ -20,6 +39,19 @@ interface ServiceCard {
   popular: boolean;
 }
 
+const iconMap = {
+  Palette,
+  Megaphone,
+  Monitor,
+  Camera,
+  PenTool,
+  Share2,
+  Video,
+  Film,
+  FileText,
+  Target,
+};
+
 function PricingCard({ service, index }: { service: ServiceCard; index: number }) {
   const whatsappMessage = `Hi! I'm interested in the "${service.title}" plan (${service.price}). Can you tell me more?`;
 
@@ -30,9 +62,7 @@ function PricingCard({ service, index }: { service: ServiceCard; index: number }
       transition={{ duration: 0.4, delay: index * 0.1 }}
       whileHover={{ y: -8 }}
       className={`relative flex flex-col rounded-2xl border p-8 ${
-        service.popular
-          ? "border-accent bg-card glow"
-          : "border-border bg-card"
+        service.popular ? "border-accent bg-card glow" : "border-border bg-card"
       }`}
     >
       {service.popular && (
@@ -44,9 +74,7 @@ function PricingCard({ service, index }: { service: ServiceCard; index: number }
       <div className="mb-6">
         <h3 className="text-xl font-semibold">{service.title}</h3>
         <div className="mt-3 flex items-baseline gap-1">
-          <span className="text-4xl font-bold gradient-text">
-            {service.price}
-          </span>
+          <span className="text-4xl font-bold gradient-text">{service.price}</span>
         </div>
         <p className="mt-1 text-sm text-muted-foreground">{service.duration}</p>
       </div>
@@ -90,15 +118,12 @@ export default function ServicesPage() {
     },
   ];
 
-  const currentServices =
-    activeTab === "onetime" ? oneTimeServices : freeServices;
+  const currentServices = activeTab === "onetime" ? oneTimeServices : freeServices;
 
   return (
     <>
       <section className="relative overflow-hidden pt-32 pb-12">
-        <div className="absolute inset-0 -z-10">
-          <div className="absolute top-0 right-1/4 h-96 w-96 rounded-full bg-accent/15 blur-[120px]" />
-        </div>
+        <AnimatedBackground variant="section" />
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -107,19 +132,20 @@ export default function ServicesPage() {
             className="text-center"
           >
             <span className="text-sm font-semibold uppercase tracking-widest text-accent">
-              Services
+              Our Services
             </span>
             <h1 className="mt-3 text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
               Choose Your <span className="gradient-text">Plan</span>
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-lg text-muted-foreground">
-              Whether you need a one-time project or want to start for free,
-              we have the perfect solution for your brand.
+              Whether you need a one-time project or want to start for free, we
+              have the perfect solution for your brand.
             </p>
           </motion.div>
         </div>
       </section>
 
+      {/* Pricing Tabs — primary section */}
       <section className="pb-8">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto flex max-w-md rounded-2xl border border-border bg-muted/50 p-1.5">
@@ -138,9 +164,7 @@ export default function ServicesPage() {
                 )}
                 <span
                   className={`relative z-10 flex items-center gap-2 ${
-                    activeTab === tab.id
-                      ? "text-foreground"
-                      : "text-muted-foreground"
+                    activeTab === tab.id ? "text-foreground" : "text-muted-foreground"
                   }`}
                 >
                   <tab.icon className="h-4 w-4" />
@@ -179,39 +203,85 @@ export default function ServicesPage() {
         </div>
       </AnimatedSection>
 
-      <AnimatedSection className="py-24">
+      <AnimatedSection className="py-12">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <SectionHeading
-            label="Process"
-            title="How We Work"
-            description="A streamlined process that delivers exceptional results every time."
+            label="Featured"
+            title="Our Core Services"
+            description="Specialized solutions designed to elevate your brand and drive growth."
           />
-          <div className="grid gap-8 md:grid-cols-4">
-            {[
-              { step: "01", title: "Discovery", desc: "We learn about your brand, goals, and audience." },
-              { step: "02", title: "Strategy", desc: "We craft a tailored creative strategy." },
-              { step: "03", title: "Creation", desc: "Our team brings the vision to life." },
-              { step: "04", title: "Launch", desc: "We deliver and optimize for maximum impact." },
-            ].map((item, i) => (
-              <motion.div
-                key={item.step}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="relative text-center"
-              >
-                <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-2xl border border-border bg-card text-2xl font-bold gradient-text">
-                  {item.step}
-                </div>
-                <h3 className="mb-2 text-lg font-semibold">{item.title}</h3>
-                <p className="text-sm text-muted-foreground">{item.desc}</p>
-              </motion.div>
-            ))}
+          <div className="grid gap-8 md:grid-cols-2">
+            {featuredServices.map((service, i) => {
+              const Icon = iconMap[service.icon as keyof typeof iconMap];
+              return (
+                <motion.div
+                  key={service.title}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.1 }}
+                  whileHover={{ y: -8 }}
+                  className="group relative overflow-hidden rounded-3xl border border-border bg-card p-10"
+                >
+                  <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
+                  <div className="relative">
+                    <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-accent/10 text-accent transition-colors group-hover:bg-accent group-hover:text-white">
+                      <Icon className="h-7 w-7" />
+                    </div>
+                    <h3 className="mb-3 text-2xl font-bold">{service.title}</h3>
+                    <p className="leading-relaxed text-muted-foreground">{service.description}</p>
+                    <div className="mt-6">
+                      <Button
+                        href={getWhatsAppLink(`Hi! I'm interested in your ${service.title} service.`)}
+                        external
+                        variant="secondary"
+                      >
+                        Inquire Now
+                      </Button>
+                    </div>
+                  </div>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </AnimatedSection>
 
+      <AnimatedSection className="bg-muted/30 py-24">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <SectionHeading
+            label="All Services"
+            title="Everything We Offer"
+            description="A comprehensive range of creative and marketing services."
+          />
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {services.map((service, i) => {
+              const Icon = iconMap[service.icon as keyof typeof iconMap];
+              return (
+                <motion.div
+                  key={service.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.05 }}
+                  whileHover={{ y: -6 }}
+                  className="group flex items-start gap-4 rounded-2xl border border-border bg-card p-6 transition-colors hover:border-accent/30"
+                >
+                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-accent/10 text-accent transition-colors group-hover:bg-accent group-hover:text-white">
+                    <Icon className="h-5 w-5" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold">{service.title}</h3>
+                    <p className="mt-1 text-sm text-muted-foreground">{service.description}</p>
+                  </div>
+                </motion.div>
+              );
+            })}
+          </div>
+        </div>
+      </AnimatedSection>
+
+      <ProcessSection />
       <CTASection />
     </>
   );

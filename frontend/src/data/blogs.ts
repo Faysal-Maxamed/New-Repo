@@ -23,7 +23,7 @@ export const blogs: BlogPost[] = [
     content: [
       "Brand storytelling has evolved far beyond traditional advertising. In 2026, the most successful brands aren't just selling products — they're crafting immersive narratives that invite audiences to become part of the story.",
       "The shift from product-centric to story-centric marketing has been accelerated by social media, short-form video, and interactive digital experiences. Brands that master this transition see significantly higher engagement rates and customer loyalty.",
-      "At Lumina Agency, we've seen firsthand how a well-crafted brand narrative can transform a company's market position. Our recent campaign for Nova Fashion increased brand recall by 45% simply by shifting focus from product features to the lifestyle and values the brand represents.",
+      "At Guhaad Creatives & Advert, we've seen firsthand how a well-crafted brand narrative can transform a company's market position. Our recent campaigns have increased brand recall significantly by shifting focus from product features to the lifestyle and values the brand represents.",
       "The key elements of effective brand storytelling include authenticity, emotional resonance, visual consistency, and a clear brand voice. When these elements align, your audience doesn't just recognize your brand — they remember how it made them feel.",
       "Looking ahead, we predict that AI-assisted personalization, immersive AR experiences, and community-driven content will define the next wave of brand storytelling. The brands that adapt early will lead their industries.",
     ],
@@ -69,7 +69,7 @@ export const blogs: BlogPost[] = [
       "Red evokes urgency, passion, and excitement — which is why it's commonly used in clearance sales and food branding. Blue conveys trust, stability, and professionalism, making it the go-to choice for financial institutions and tech companies.",
       "Green represents growth, health, and sustainability. It's no coincidence that eco-friendly brands like GreenLeaf gravitate toward green palettes. Purple suggests luxury and creativity, while yellow communicates optimism and warmth.",
       "The context matters enormously. A color that works brilliantly for a children's toy brand might feel completely wrong for a law firm. Cultural differences also play a significant role — white symbolizes purity in Western cultures but mourning in some Eastern traditions.",
-      "At Lumina Agency, we always start brand identity projects with a thorough color psychology analysis. We consider the target audience, industry norms, competitive landscape, and emotional goals before selecting a palette. This strategic approach ensures every color choice serves a purpose.",
+      "At Guhaad Creatives & Advert, we always start brand identity projects with a thorough color psychology analysis. We consider the target audience, industry norms, competitive landscape, and emotional goals before selecting a palette. This strategic approach ensures every color choice serves a purpose.",
     ],
     image:
       "https://images.unsplash.com/photo-1541701494587-585be01a5bca?w=1200&h=700&fit=crop",

@@ -16,9 +16,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Lumina Agency | Creative Advertising Agency",
+  title: "Guhaad Creatives & Advert | Creative Advertising Agency",
   description:
-    "We craft bold advertising experiences that transform brands and captivate audiences worldwide.",
+    "Full-service creative agency in Mogadishu, Somalia. Branding, digital marketing, video production, web design, and advertising solutions.",
 };
 
 export default function RootLayout({

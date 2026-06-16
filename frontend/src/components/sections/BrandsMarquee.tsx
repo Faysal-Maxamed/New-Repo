@@ -9,7 +9,7 @@ export function BrandsMarquee() {
   return (
     <section className="overflow-hidden border-y border-border bg-muted/40 py-10">
       <p className="mb-6 text-center text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
-        Trusted by leading brands
+        Trusted across industries
       </p>
       <div className="relative">
         <div className="absolute left-0 z-10 h-full w-20 bg-gradient-to-r from-background to-transparent" />

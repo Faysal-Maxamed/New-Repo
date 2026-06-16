@@ -1,26 +1,26 @@
 import Link from "next/link";
-import { Sparkles, Mail, Phone, MapPin, Share2, Globe, MessageCircle } from "lucide-react";
+import { Sparkles, Mail, Phone, MapPin, Share2, Globe, Link2 } from "lucide-react";
+import { companyInfo } from "@/data/content";
 
 const footerLinks = {
   company: [
     { href: "/about", label: "About Us" },
-    { href: "/projects", label: "Projects" },
-    { href: "/blog", label: "Blog" },
+    { href: "/projects", label: "Portfolio" },
     { href: "/services", label: "Services" },
     { href: "/contact", label: "Contact" },
   ],
   services: [
-    { href: "/services", label: "Brand Strategy" },
+    { href: "/services", label: "Branding & Identity" },
     { href: "/services", label: "Digital Marketing" },
-    { href: "/services", label: "Creative Design" },
-    { href: "/services", label: "Social Media" },
+    { href: "/services", label: "Video Production" },
+    { href: "/services", label: "Website Design" },
   ],
 };
 
 const socials = [
-  { icon: Share2, href: "#", label: "Social" },
-  { icon: Globe, href: "#", label: "Website" },
-  { icon: MessageCircle, href: "#", label: "Messages" },
+  { icon: Share2, href: companyInfo.social.facebook, label: "Facebook" },
+  { icon: Globe, href: companyInfo.social.instagram, label: "Instagram" },
+  { icon: Link2, href: companyInfo.social.linkedin, label: "LinkedIn" },
 ];
 
 export function Footer() {
@@ -34,18 +34,19 @@ export function Footer() {
                 <Sparkles className="h-4 w-4 text-white" />
               </div>
               <span className="text-lg font-bold">
-                Lumina<span className="gradient-text">Agency</span>
+                Guhaad<span className="gradient-text">Creatives</span>
               </span>
             </Link>
             <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-              We craft bold advertising experiences that transform brands and
-              captivate audiences worldwide.
+              {companyInfo.overview}
             </p>
             <div className="mt-6 flex gap-3">
               {socials.map((social) => (
                 <a
                   key={social.label}
                   href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   aria-label={social.label}
                   className="flex h-10 w-10 items-center justify-center rounded-full border border-border text-muted-foreground transition-all hover:border-accent/50 hover:bg-accent/10 hover:text-accent"
                 >
@@ -98,15 +99,19 @@ export function Footer() {
             <ul className="space-y-3">
               <li className="flex items-center gap-3 text-sm text-muted-foreground">
                 <Mail className="h-4 w-4 shrink-0 text-accent" />
-                hello@luminaagency.com
+                <a href={`mailto:${companyInfo.email}`} className="hover:text-accent transition-colors">
+                  {companyInfo.email}
+                </a>
               </li>
               <li className="flex items-center gap-3 text-sm text-muted-foreground">
                 <Phone className="h-4 w-4 shrink-0 text-accent" />
-                +1 (555) 123-4567
+                <a href={`tel:+252${companyInfo.phone.slice(1)}`} className="hover:text-accent transition-colors">
+                  {companyInfo.phone}
+                </a>
               </li>
               <li className="flex items-center gap-3 text-sm text-muted-foreground">
                 <MapPin className="h-4 w-4 shrink-0 text-accent" />
-                New York, USA
+                {companyInfo.address}
               </li>
             </ul>
           </div>
@@ -114,16 +119,11 @@ export function Footer() {
 
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-border pt-8 sm:flex-row">
           <p className="text-sm text-muted-foreground">
-            &copy; {new Date().getFullYear()} Lumina Agency. All rights reserved.
+            &copy; {new Date().getFullYear()} {companyInfo.name}. All rights reserved.
           </p>
-          <div className="flex gap-6 text-sm text-muted-foreground">
-            <a href="#" className="hover:text-accent transition-colors">
-              Privacy Policy
-            </a>
-            <a href="#" className="hover:text-accent transition-colors">
-              Terms of Service
-            </a>
-          </div>
+          <p className="text-sm text-muted-foreground">
+            {companyInfo.website}
+          </p>
         </div>
       </div>
     </footer>

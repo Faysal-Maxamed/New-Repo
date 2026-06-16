@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
 import { Button } from "@/components/ui/Button";
+import { getWhatsAppLink } from "@/lib/constants";
 
 export function CTASection() {
   return (
@@ -15,6 +16,18 @@ export function CTASection() {
           viewport={{ once: true }}
           className="relative overflow-hidden rounded-3xl gradient-bg p-12 text-center sm:p-16 lg:p-20"
         >
+          <motion.div
+            className="absolute inset-0"
+            animate={{
+              background: [
+                "radial-gradient(circle at 20% 50%, rgba(255,255,255,0.1) 0%, transparent 50%)",
+                "radial-gradient(circle at 80% 50%, rgba(255,255,255,0.15) 0%, transparent 50%)",
+                "radial-gradient(circle at 20% 50%, rgba(255,255,255,0.1) 0%, transparent 50%)",
+              ],
+            }}
+            transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+          />
+
           <div className="absolute inset-0 opacity-20">
             <div
               className="h-full w-full"
@@ -28,18 +41,19 @@ export function CTASection() {
 
           <div className="relative">
             <h2 className="text-3xl font-bold text-white sm:text-4xl lg:text-5xl">
-              Ready to Transform Your Brand?
+              Ready to Grow Your Brand?
             </h2>
             <p className="mx-auto mt-4 max-w-xl text-lg text-white/80">
-              Let&apos;s create something extraordinary together. Get in touch
-              and start your creative journey today.
+              Let&apos;s create something extraordinary together. Contact Guhaad
+              Creatives & Advert and start your creative journey today.
             </p>
             <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
               <Button
-                href="/contact"
+                href={getWhatsAppLink("Hi! I'd like to discuss a project with Guhaad Creatives & Advert.")}
+                external
                 className="!bg-white !text-violet-700 !shadow-none hover:!brightness-95"
               >
-                Get Started Free
+                Get Started
                 <ArrowRight className="h-4 w-4" />
               </Button>
               <Button

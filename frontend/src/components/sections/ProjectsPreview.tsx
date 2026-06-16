@@ -14,9 +14,9 @@ export function ProjectsPreview() {
     <AnimatedSection className="py-24">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <SectionHeading
-          label="Our Work"
-          title="Featured Projects"
-          description="Explore some of our most impactful creative work."
+          label="Portfolio"
+          title="Our Work"
+          description="Explore our completed projects, campaigns, and creative work."
         />
 
         <StaggerContainer className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">

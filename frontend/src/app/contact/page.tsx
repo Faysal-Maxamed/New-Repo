@@ -2,29 +2,44 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Mail, Phone, MapPin, Send, CheckCircle, AlertCircle } from "lucide-react";
+import { Mail, Phone, MapPin, Send, CheckCircle, AlertCircle, Share2, Globe, Link2 } from "lucide-react";
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
+import { AnimatedBackground } from "@/components/ui/AnimatedBackground";
 import { Button } from "@/components/ui/Button";
+import { companyInfo } from "@/data/content";
+import { getWhatsAppLink } from "@/lib/constants";
 
 const contactInfo = [
   {
     icon: Mail,
     title: "Email",
-    value: "hello@luminaagency.com",
-    href: "mailto:hello@luminaagency.com",
+    value: companyInfo.email,
+    href: `mailto:${companyInfo.email}`,
   },
   {
     icon: Phone,
     title: "Phone",
-    value: "0614388477",
-    href: "tel:+252614388477",
+    value: companyInfo.phone,
+    href: `tel:+252${companyInfo.phone.slice(1)}`,
   },
   {
     icon: MapPin,
-    title: "Office",
-    value: "Mogadishu, Somalia",
+    title: "Address",
+    value: companyInfo.address,
     href: "#",
   },
+  {
+    icon: Globe,
+    title: "Website",
+    value: companyInfo.website,
+    href: `https://${companyInfo.website}`,
+  },
+];
+
+const socialLinks = [
+  { icon: Share2, label: "guhaad creatives", href: companyInfo.social.facebook },
+  { icon: Globe, label: "Instagram — guhaad advert", href: companyInfo.social.instagram },
+  { icon: Link2, label: "LinkedIn — guhaad advert", href: companyInfo.social.linkedin },
 ];
 
 export default function ContactPage() {
@@ -65,7 +80,7 @@ export default function ContactPage() {
       }
     } catch {
       setError(
-        "Could not connect to server. Make sure the backend is running."
+        "Could not connect to server. You can reach us via WhatsApp or email directly."
       );
     } finally {
       setLoading(false);
@@ -75,9 +90,7 @@ export default function ContactPage() {
   return (
     <>
       <section className="relative overflow-hidden pt-32 pb-12">
-        <div className="absolute inset-0 -z-10">
-          <div className="absolute bottom-0 left-1/4 h-96 w-96 rounded-full bg-accent/15 blur-[120px]" />
-        </div>
+        <AnimatedBackground variant="section" />
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -92,8 +105,8 @@ export default function ContactPage() {
               Let&apos;s <span className="gradient-text">Connect</span>
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-lg text-muted-foreground">
-              Have a project in mind? Send us a message and it will arrive
-              directly in our Gmail inbox.
+              Have a project in mind? Reach out to Guhaad Creatives & Advert.
+              We&apos;d love to hear from you.
             </p>
           </motion.div>
         </div>
@@ -105,8 +118,8 @@ export default function ContactPage() {
             <div className="lg:col-span-2">
               <h2 className="text-2xl font-bold">Get in Touch</h2>
               <p className="mt-3 text-muted-foreground">
-                Fill out the form and your message will be sent directly to
-                our Gmail. We&apos;ll respond within 24 hours.
+                Fill out the form or contact us directly. We&apos;ll respond
+                within 24 hours.
               </p>
 
               <div className="mt-8 space-y-6">
@@ -122,12 +135,39 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <p className="text-sm font-medium">{info.title}</p>
-                      <p className="text-sm text-muted-foreground">
-                        {info.value}
-                      </p>
+                      <p className="text-sm text-muted-foreground">{info.value}</p>
                     </div>
                   </motion.a>
                 ))}
+              </div>
+
+              <div className="mt-8">
+                <p className="mb-4 text-sm font-medium">Follow Us</p>
+                <div className="space-y-3">
+                  {socialLinks.map((social) => (
+                    <motion.a
+                      key={social.label}
+                      href={social.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      whileHover={{ x: 4 }}
+                      className="flex items-center gap-3 text-sm text-muted-foreground hover:text-accent transition-colors"
+                    >
+                      <social.icon className="h-4 w-4 text-accent" />
+                      {social.label}
+                    </motion.a>
+                  ))}
+                </div>
+              </div>
+
+              <div className="mt-8">
+                <Button
+                  href={getWhatsAppLink("Hi! I'd like to discuss a project with Guhaad Creatives & Advert.")}
+                  external
+                  className="w-full sm:w-auto"
+                >
+                  Chat on WhatsApp
+                </Button>
               </div>
             </div>
 
@@ -141,8 +181,7 @@ export default function ContactPage() {
                   <CheckCircle className="mb-4 h-16 w-16 text-accent" />
                   <h3 className="text-2xl font-bold">Message Sent!</h3>
                   <p className="mt-2 text-muted-foreground">
-                    Your message has been sent to our Gmail. We&apos;ll get back
-                    to you soon.
+                    Thank you for reaching out. We&apos;ll get back to you soon.
                   </p>
                   <Button
                     onClick={() => setSubmitted(false)}
@@ -172,10 +211,7 @@ export default function ContactPage() {
 
                   <div className="grid gap-6 sm:grid-cols-2">
                     <div>
-                      <label
-                        htmlFor="name"
-                        className="mb-2 block text-sm font-medium"
-                      >
+                      <label htmlFor="name" className="mb-2 block text-sm font-medium">
                         Full Name
                       </label>
                       <input
@@ -183,14 +219,11 @@ export default function ContactPage() {
                         name="name"
                         required
                         className="w-full rounded-xl border border-border bg-background px-4 py-3 text-sm transition-colors outline-none focus:border-accent focus:ring-2 focus:ring-accent/20"
-                        placeholder="John Doe"
+                        placeholder="Your name"
                       />
                     </div>
                     <div>
-                      <label
-                        htmlFor="email"
-                        className="mb-2 block text-sm font-medium"
-                      >
+                      <label htmlFor="email" className="mb-2 block text-sm font-medium">
                         Email
                       </label>
                       <input
@@ -199,16 +232,13 @@ export default function ContactPage() {
                         type="email"
                         required
                         className="w-full rounded-xl border border-border bg-background px-4 py-3 text-sm transition-colors outline-none focus:border-accent focus:ring-2 focus:ring-accent/20"
-                        placeholder="john@example.com"
+                        placeholder="your@email.com"
                       />
                     </div>
                   </div>
 
                   <div className="mt-6">
-                    <label
-                      htmlFor="subject"
-                      className="mb-2 block text-sm font-medium"
-                    >
+                    <label htmlFor="subject" className="mb-2 block text-sm font-medium">
                       Subject
                     </label>
                     <input
@@ -221,10 +251,7 @@ export default function ContactPage() {
                   </div>
 
                   <div className="mt-6">
-                    <label
-                      htmlFor="message"
-                      className="mb-2 block text-sm font-medium"
-                    >
+                    <label htmlFor="message" className="mb-2 block text-sm font-medium">
                       Message
                     </label>
                     <textarea
@@ -241,16 +268,12 @@ export default function ContactPage() {
                     {loading ? (
                       <motion.div
                         animate={{ rotate: 360 }}
-                        transition={{
-                          duration: 1,
-                          repeat: Infinity,
-                          ease: "linear",
-                        }}
+                        transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
                         className="h-4 w-4 rounded-full border-2 border-white border-t-transparent"
                       />
                     ) : (
                       <>
-                        Send to Gmail
+                        Send Message
                         <Send className="h-4 w-4" />
                       </>
                     )}

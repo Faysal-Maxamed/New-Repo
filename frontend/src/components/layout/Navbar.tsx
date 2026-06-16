@@ -53,7 +53,7 @@ export function Navbar() {
             <Sparkles className="h-4 w-4 text-white" />
           </motion.div>
           <span className="text-lg font-bold tracking-tight">
-            Guhaad<span className="gradient-text">Agency</span>
+            Guhaad<span className="gradient-text">Creatives</span>
           </span>
         </Link>
 
@@ -84,7 +84,7 @@ export function Navbar() {
         <div className="flex items-center gap-3">
           <ThemeToggle />
           <a
-            href={getWhatsAppLink("Hi! I'd like to get started with Lumina Agency.")}
+            href={getWhatsAppLink("Hi! I'd like to get started with Guhaad Creatives & Advert.")}
             target="_blank"
             rel="noopener noreferrer"
             className="hidden rounded-full gradient-bg px-5 py-2 text-sm font-semibold text-white shadow-md shadow-accent/20 transition-all hover:brightness-110 sm:inline-flex"

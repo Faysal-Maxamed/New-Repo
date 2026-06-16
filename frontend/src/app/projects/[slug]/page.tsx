@@ -22,7 +22,7 @@ export async function generateMetadata({ params }: ProjectPageProps) {
   if (!project) return { title: "Project Not Found" };
 
   return {
-    title: `${project.title} | Lumina Agency`,
+    title: `${project.title} | Guhaad Creatives`,
     description: project.description,
   };
 }
